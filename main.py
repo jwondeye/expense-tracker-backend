@@ -42,11 +42,15 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # allow Vercel
+    allow_origins=[
+        "http://localhost:5173",
+        "https://expense-tracker-jw.vercel.app"
+    ],
     allow_credentials=True,
-    allow_methods=["*"],  # IMPORTANT for preflight
-    allow_headers=["*"],  # IMPORTANT for preflight
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
+
 
 
 # -----------------------
