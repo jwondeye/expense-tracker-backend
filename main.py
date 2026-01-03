@@ -42,11 +42,12 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["*"],  # allow Vercel
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # IMPORTANT for preflight
+    allow_headers=["*"],  # IMPORTANT for preflight
 )
+
 
 # -----------------------
 # Dependencies
